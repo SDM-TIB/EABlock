@@ -1,0 +1,38 @@
+@prefix fno: <http://semweb.datasciencelab.be/ns/function#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix eablock: <http://www.EABlock.com/> .
+
+funon:entityAlignmentProblem a fno:Problem.
+funon:falconDBpediaDescriptionAlgorithm a fno:Algorithm.
+
+funon:falcon_dbpedia_description_function a fno:Function;
+    fno:name "Falcon DBpedia Function"^^xsd:string;
+    dcterms:description "Provides an Entity Recognition and linking to DBpedia."^^xsd:string;
+    fno:solves funon:entityAlignmentProblem;
+    fno:implements funon:falconDBpediaDescriptionAlgorithm;
+    fno:expects ( 
+        [
+            funon:entity a fno:Parameter;
+                fno:type xsd:string;
+                fno:name "entity" ;
+                fno:predicate funon:value; 
+                fno:required "true"^^xsd:boolean. 
+        ]
+    ).
+    fno:returns (
+        [
+            funon:linkedEntity a fno:Parameter; 
+                fno:type xsd:string;
+                fno:name "linkedEntity" ;
+                fno:predicate funon:output; 
+                fno:required "true"^^xsd:boolean 
+        ]  
+    ).
+
+funon:falconDBpediaDescriptionExecution a fno:Execution;
+    fno:executes funon:falcon_dbpedia_description_function;
+    funon:entity ^^xsd:string;
+    funon:linkedEntity ^^xsd:string.
+

@@ -1,0 +1,38 @@
+@prefix fno: <http://semweb.datasciencelab.be/ns/function#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix eablock: <http://www.EABlock.com/> .
+
+eablock:entityAlignmentProblem a fno:Problem.
+eablock:falconWikipediaDescriptionAlgorithm a fno:Algorithm.
+
+eablock:falcon_wikipedia_description_function a fno:Function;
+    fno:name "Falcon Wikipedia Function"^^xsd:string;
+    dcterms:description "Provides an entity recognition and linking to Wikipedia for long descriptions."^^xsd:string;
+    fno:solves eablock:entityAlignmentProblem;
+    fno:implements eablock:falconWikipediaDescriptionAlgorithm;
+    fno:expects ( 
+        [
+            eablock:entity    a fno:Parameter;
+                fno:type xsd:string;
+                fno:name "entity" ;
+                fno:predicate eablock:value; 
+                fno:required "true"^^xsd:boolean. 
+        ]
+    ).
+    fno:returns (
+        [
+            eablock:linkedEntity  a fno:Parameter; 
+                fno:type xsd:string;
+                fno:name "linkedEntity" ;
+                fno:predicate eablock:output; 
+                fno:required "true"^^xsd:boolean 
+        ]  
+    ).
+
+eablock:falconWikipediaDescriptionExecution a fno:Execution;
+    fno:executes eablock:falcon_wikipedia_description_function;
+    eablock:entity ^^xsd:string;
+    eablock:linkedEntity ^^xsd:string.
+

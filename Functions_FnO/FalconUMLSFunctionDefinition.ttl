@@ -1,0 +1,38 @@
+@prefix fno: <http://semweb.datasciencelab.be/ns/function#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix eablock: <http://www.EABlock.com/> .
+
+eablock:entityAlignmentProblem a fno:Problem.
+eablock:falconUMLSAlgorithm a fno:Algorithm.
+
+eablock:falcon_UMLS_CUI_function a fno:Function;
+    fno:name "Falcon UMLS Function"^^xsd:string;
+    dcterms:description "Provides an entity recognition and linking to UMLS."^^xsd:string;
+    fno:solves eablock:entityAlignmentProblem;
+    fno:implements eablock:falcon_UMLS_CUI_function;
+    fno:expects ( 
+        [
+            eablock:entity    a fno:Parameter;
+                fno:type xsd:string;
+                fno:name "entity" ;
+                fno:predicate eablock:value; 
+                fno:required "true"^^xsd:boolean. 
+        ]
+    ).
+    fno:returns (
+        [
+            eablock:linkedEntity  a fno:Parameter; 
+                fno:type xsd:string;
+                fno:name "CUI" ;
+                fno:predicate eablock:output; 
+                fno:required "true"^^xsd:boolean 
+        ]  
+    ).
+
+eablock:falconUMLSExecution a fno:Execution;
+    fno:executes eablock:falcon_UMLS_function;
+    eablock:entity ^^xsd:string;
+    eablock:linkedEntity ^^xsd:string.
+

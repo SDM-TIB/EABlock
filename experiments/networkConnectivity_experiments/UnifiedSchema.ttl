@@ -1,0 +1,147 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prv: <http://purl.org/net/provenance/ns#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix eablock: <http://www.EABlock.com/> .
+
+#################################################################################################################################################
+#################################################################################################################################################
+#################################################################################################################################################
+###############################################################   Classes   #####################################################################
+#################################################################################################################################################
+#################################################################################################################################################
+#################################################################################################################################################
+
+eablock:Concept	rdf:type	owl:Class;
+					rdfs:label	"Concept";
+					rdfs:comment "Constituents of thoughts or real world entities.";
+					dcterms:modified "2021-04-27"^^xsd:date;
+					dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/>.
+
+eablock:Annotation	rdf:type	owl:Class;
+						rdfs:label	"Annotation";
+						rdfs:comment "Annotation of a concept including label, id and source of concept.";
+						dcterms:modified "2021-04-27"^^xsd:date;
+						dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/>.
+
+eablock:Disorder	rdf:type	owl:Class;
+					rdfs:label	"Disorder";
+					rdfs:subClassOf	eablock:Concept;
+					rdfs:comment "A particular abnormal condition that negatively affects the structure or function of all or part of an organism, and that is not due to any immediate external injury.";
+					dcterms:modified "2021-04-27"^^xsd:date;
+					dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/>.
+
+eablock:Drug	rdf:type	owl:Class;
+				rdfs:label	"Drug";
+				rdfs:subClassOf	eablock:Concept;
+				rdfs:comment "A substance used as a medication or in the preparation of medication.";
+				dcterms:modified "2021-04-27"^^xsd:date;
+				dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/>.
+
+eablock:DrugDrugInteraction	rdf:type	owl:Class;
+								rdfs:label	"DrugDrugInteraction";
+								rdfs:subClassOf	eablock:Interaction;
+								rdfs:comment "The relation between two drugs that interact.";
+								dcterms:modified "2021-04-27"^^xsd:date;
+								dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/>.
+
+eablock:SymmetricDrugDrugInteraction	rdf:type	owl:Class;
+										rdfs:label	"SymmetricDrugDrugInteraction";
+										rdfs:subClassOf	eablock:DrugDrugInteraction;
+										rdfs:comment "The interactions between two drugs that do not change the effectiveness of the drugs.";
+										dcterms:modified "2021-04-27"^^xsd:date;
+										dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/>.
+
+eablock:DrugDisorderInteraction	rdf:type	owl:Class;
+									rdfs:label	"DrugDisorderInteraction";
+									rdfs:subClassOf	eablock:Interaction;
+									rdfs:comment "A drug-induced disorder.";
+									dcterms:modified "2021-04-27"^^xsd:date;
+									dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/staff/maria-isabel-castellanos/>.
+
+eablock:Patient	rdf:type	owl:Class;
+					rdfs:label	"Patient";
+					rdfs:subClassOf	eablock:CancerPatient;
+					rdfs:comment "A patient who is diagnosed with Lung Cancer.";
+					dcterms:modified "2021-04-27"^^xsd:date;			
+					dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/>.
+
+#################################################################################################################################################																																			
+#################################################################################################################################################
+#################################################################################################################################################
+#################################################### Properties - relationships #################################################################
+#################################################################################################################################################
+#################################################################################################################################################
+#################################################################################################################################################
+
+sio:SIO_000255	rdf:type	owl:ObjectProperty;
+				rdfs:label	"has_annotation";
+				dc:identifier "SIO_000255" ;
+				rdfs:domain	eablock:Concept;
+				rdfs:range	eablock:Concept;
+				rdfs:comment "A relation between an entity and some textual annotation.";
+				dcterms:modified "2021-04-27"^^xsd:date;
+				dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/>.
+
+eablock:precipitant_drug	rdf:type	owl:ObjectProperty;
+							rdfs:label	"precipitant_drug";
+							rdfs:domain	eablock:DrugDrugInteraction;
+							rdfs:range	eablock:Drug;
+							rdfs:comment	"The relationship between the drug drug interaction and corresponding precipitant drug.";
+							dcterms:modified "2021-04-27"^^xsd:date;
+							dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/>.
+
+eablock:object_drug	rdf:type	owl:ObjectProperty;
+						rdfs:label	"object_drug";
+						rdfs:domain	eablock:DrugDrugInteraction;
+						rdfs:range	eablock:Drug;
+						rdfs:comment	"The relationship between the drug drug interaction and corresponding object drug .";
+						dcterms:modified "2021-04-27"^^xsd:date;
+						dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/>.
+
+eablock:effect	rdf:type	owl:ObjectProperty;
+					rdfs:label	"effect";
+					rdfs:domain	eablock:DrugDrugInteraction;
+					rdfs:range	eablock:AdverseEvent;
+					rdfs:comment	"The relationship between the drug drug interaction and corresponding adverse event.";
+					dcterms:modified "2021-04-27"^^xsd:date;
+					dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/>.
+
+eablock:patient_isPrescribed_NonOncologicalDrug	rdf:type	owl:ObjectProperty;
+													rdfs:label	"patient_isPrescribed_NonOncologicalDrug";
+													rdfs:domain	eablock:Patient;
+													rdfs:range	eablock:Drug;
+													rdfs:comment	"The relationship between the patient and non-oncological drug.";
+													dcterms:modified "2021-04-27"^^xsd:date;
+													dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/>.
+
+eablock:relatesToDrug	rdf:type	owl:ObjectProperty;
+						rdfs:label	"relatesToDrug";
+						rdfs:domain	eablock:DrugDisorderInteraction;
+						rdfs:range	eablock:Drug;
+						rdfs:comment	"The relationship between drug disorder interaction and the drug.";
+						dcterms:modified "2021-04-27"^^xsd:date;
+						dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/>.
+
+eablock:relatesToDisorder	rdf:type	owl:ObjectProperty;
+							rdfs:label	"relatesToDisorder";
+							rdfs:domain	eablock:DrugDisorderInteraction;
+							rdfs:range	eablock:Drug;
+							rdfs:comment	"The relationship between drug disorder interaction and the disorder.";
+							dcterms:modified "2021-04-27"^^xsd:date;
+							dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/>.
+
+eablock:hasComorbidity	rdf:type	owl:ObjectProperty;
+							rdfs:label	"hasComorbidity";
+							rdfs:domain	eablock:Patient;
+							rdfs:range	eablock:Disorder;
+							rdfs:comment	"The relationship between patient and the disorder they are suffering from.";
+							dcterms:modified "2021-04-27"^^xsd:date;
+							dcterms:creator <https://www.tib.eu/en/research-development/scientific-data-management/staff/samaneh-jozashoori/>.
+
+
+

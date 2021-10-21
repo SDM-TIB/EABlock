@@ -1,0 +1,120 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rev: <http://purl.org/stuff/rev#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix eablock: <http://www.EABlock.com/> .
+
+<DrugDisorderInteraction>
+	rml:logicalSource [ rml:source "/efficiency_exp_data/dataset_1k_1ORM_2ORM_experiments_processed.csv";
+						rml:referenceFormulation ql:CSV 
+						];
+	rr:subjectMap [
+		rr:template "http://www.EABlock.com/DrugDisorderInteraction/{DrugId}_isPrescribedFor_{indication_name}";
+		rr:class eablock:DrugDisorderInteraction
+	];
+	rr:predicateObjectMap [
+		rr:predicate eablock:relatesToDisorder;
+		rr:objectMap [ 
+			rr:template "http://www.EABlock.com/Disorder/{indication_name}";  
+		]
+	];
+	rr:predicateObjectMap [
+		rr:predicate eablock:relatesToDrug;
+		rr:objectMap [
+            rr:parentTriplesMap <Drug>
+        ]
+	];
+	rr:predicateObjectMap [
+		rr:predicate prov:has_provenance;
+		rr:objectMap [
+			rr:template "http://www.EABlock.com/SourceName/DrugBank"
+		]
+	].
+
+<Drug>
+	rml:logicalSource [ rml:source "/efficiency_exp_data/dataset_1k_1ORM_2ORM_experiments_processed.csv";
+						rml:referenceFormulation ql:CSV
+						];
+	rr:subjectMap [
+		rr:template "http://www.EABlock.com/Drug/{DrugName}"; 	
+	];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://www.EABlock.com/Drug";
+        ]
+    ];
+	rr:predicateObjectMap [
+		rr:predicate owl:sameAs;
+        rr:objectMap [
+            rr:parentTriplesMap <FalconDBpedia-Drug>
+        ]
+	];
+	rr:predicateObjectMap [
+		rr:predicate owl:sameAs;
+        rr:objectMap [
+            rr:parentTriplesMap <FalconWikipedia-Drug>
+        ]
+	];
+	rr:predicateObjectMap [
+		rr:predicate sio:SIO_000255;
+        rr:objectMap [
+            rr:parentTriplesMap <FalconUMLS-Drug>
+        ]
+	].
+
+<FalconDBpedia-Drug>
+    rml:logicalSource [ rml:source "/efficiency_exp_data/dataset_1k_1ORM_2ORM_experiments_processed.csv";
+                        rml:referenceFormulation ql:CSV
+                        ];
+    rr:subjectMap [
+        rr:template "{dbpedia}";
+        rr:termType rr:IRI ;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [ 
+            rml:reference "dbpediaClass";
+            rr:termType rr:IRI ; 
+        ]
+    ]. 
+
+<FalconWikipedia-Drug>
+    rml:logicalSource [ rml:source "/efficiency_exp_data/dataset_1k_1ORM_2ORM_experiments_processed.csv";
+                        rml:referenceFormulation ql:CSV
+                        ];
+    rr:subjectMap [
+        rr:template "{wikidata}";
+        rr:termType rr:IRI ;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [ 
+            rml:reference "wikidataClass";
+            rr:termType rr:IRI ; 
+        ]
+    ].
+
+<FalconUMLS-Drug>
+    rml:logicalSource [ rml:source "/efficiency_exp_data/dataset_1k_1ORM_2ORM_experiments_processed.csv";
+                        rml:referenceFormulation ql:CSV
+                        ];
+    rr:subjectMap [
+        rr:template "http://www.EABlock.com/Annotation/{umls}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [
+            rr:template "http://www.EABlock.com/Annotation";
+        ]
+    ].

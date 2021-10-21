@@ -1,0 +1,8 @@
+
+All datasets related to this category of the experiments are available here: https://tib.eu/cloud/s/ZyMzkDaRrHF9RrJ
+
+more details:
+1- The DBpedia, Wikidata, and UMLS are dowloaded from the original sources and filtered based on the criteria mentioned in paper to only include biomedical entities.
+2- Randomly selected datasets are created which are included in "bedore_adding_misspelling" folders for each DBpedia, Wikidata, and UMLS.
+3- Using the python scripts in https://github.com/SDM-TIB/BioFunMap/tree/main/experiments/precision_recall_experiments datasets included in each folders 
+(i.e. DBpedia, Wikidata, and UMLS) are generated. 
