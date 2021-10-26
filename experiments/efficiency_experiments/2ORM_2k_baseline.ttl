@@ -15,7 +15,7 @@
 @prefix eablock: <http://www.EABlock.com/> .
 
 <DrugDisorderInteraction>
-	rml:logicalSource [ rml:source "/efficiency_exp_data/dataset_2k_1ORM_2ORM_experiments_processed.csv";
+	rml:logicalSource [ rml:source "/data/sjozashoori/eablock/data/dataset_2k_1ORM_2ORM_experiments_processed.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -48,7 +48,7 @@
 	].
     
 <DrugID>
-    rml:logicalSource [ rml:source "/efficiency_exp_data/dataset_2k_1ORM_2ORM_experiments_processed.csv";
+    rml:logicalSource [ rml:source "/data/sjozashoori/eablock/data/dataset_2k_1ORM_2ORM_experiments_processed.csv";
                         rml:referenceFormulation ql:CSV
                         ];
     rr:subjectMap [
@@ -80,7 +80,7 @@
     ].
 
 <DrugName>
-	rml:logicalSource [ rml:source "/efficiency_exp_data/dataset_2k_1ORM_2ORM_experiments_processed.csv";
+	rml:logicalSource [ rml:source "/data/sjozashoori/eablock/data/dataset_2k_1ORM_2ORM_experiments_processed.csv";
 						rml:referenceFormulation ql:CSV
 						];
 	rr:subjectMap [
@@ -112,7 +112,7 @@
 	].
 
 <FalconDBpedia-Drug>
-    rml:logicalSource [ rml:source "/efficiency_exp_data/dataset_2k_1ORM_2ORM_experiments_processed.csv";
+    rml:logicalSource [ rml:source "/data/sjozashoori/eablock/data/dataset_2k_1ORM_2ORM_experiments_processed.csv";
                         rml:referenceFormulation ql:CSV
                         ];
     rr:subjectMap [
@@ -128,7 +128,7 @@
     ]. 
 
 <FalconWikipedia-Drug>
-    rml:logicalSource [ rml:source "/efficiency_exp_data/dataset_2k_1ORM_2ORM_experiments_processed.csv";
+    rml:logicalSource [ rml:source "/data/sjozashoori/eablock/data/dataset_2k_1ORM_2ORM_experiments_processed.csv";
                         rml:referenceFormulation ql:CSV
                         ];
     rr:subjectMap [
@@ -144,7 +144,7 @@
     ].
 
 <FalconUMLS-Drug>
-    rml:logicalSource [ rml:source "/efficiency_exp_data/dataset_2k_1ORM_2ORM_experiments_processed.csv";
+    rml:logicalSource [ rml:source "/data/sjozashoori/eablock/data/dataset_2k_1ORM_2ORM_experiments_processed.csv";
                         rml:referenceFormulation ql:CSV
                         ];
     rr:subjectMap [

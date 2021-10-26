@@ -54,14 +54,14 @@ def falcon_call_wikidata(text,mode):
 
 def handler():
     wikidataList = []
-    drug_df = pd.read_csv("_PATH_TO_THE_DATASET_e.g._dataset_1k_1ORM_2ORM_experiments.csv", low_memory=False)
+    drug_df = pd.read_csv("/mnt/e/Experiments/BioFunMap/EABlock-data/efficiency_exp_data/dataset_2k_noORM_experiments.csv", low_memory=False)
     for i in range (0,len(drug_df)):
         wikidataList.append(falcon_call_wikidata(drug_df["DrugName"][i],'short'))
     wikidataSeries = pd.Series(wikidataList, name="wikidata")
     classList = ["https://www.wikidata.org/wiki/Q11173"]*len(drug_df)
     classSeries = pd.Series(classList, name="wikidataClass")
     result_df = pd.concat([drug_df,wikidataSeries,classSeries],axis=1)
-    result_df.to_csv("_PATH_TO_THE_DATASET_e.g.dataset_1k_1ORM_2ORM_experiments_processed.csv")
+    result_df.to_csv("/mnt/e/Experiments/BioFunMap/EABlock-data/efficiency_exp_data/dataset_2k_noORM_experiments_processed.csv")
 
 if __name__ == "__main__":
         handler()

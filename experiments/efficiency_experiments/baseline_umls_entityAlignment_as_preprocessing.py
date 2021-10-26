@@ -37,12 +37,12 @@ def getCui(text, mode):
 
 def handler():
     umlsList = []
-    drug_df = pd.read_csv("_PATH_TO_THE_DATASET_e.g._dataset_1k_1ORM_2ORM_experiments.csv", low_memory=False)
+    drug_df = pd.read_csv("/mnt/e/Experiments/BioFunMap/EABlock-data/efficiency_exp_data/dataset_2k_noORM_experiments.csv", low_memory=False)
     for z in range (0,len(drug_df)):
         umlsList.append(getCui(drug_df["DrugName"][z],'short'))
     umlsSeries = pd.Series(umlsList, name="umls")
     result_df = pd.concat([drug_df,umlsSeries],axis=1)
-    result_df.to_csv("_PATH_TO_THE_DATASET_e.g.dataset_1k_1ORM_2ORM_experiments_processed.csv")
+    result_df.to_csv("/mnt/e/Experiments/BioFunMap/EABlock-data/efficiency_exp_data/dataset_2k_noORM_experiments_processed.csv")
 
 if __name__ == "__main__":
         handler()

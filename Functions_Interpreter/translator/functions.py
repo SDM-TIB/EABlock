@@ -33,73 +33,8 @@ def inner_function_exists(inner_func, inner_functions):
             return False
     return True
 
-# returns a string in lower case
-def tolower(value):
-    return value.lower()
-
-
-# return a string in upper case
-def toupper(value):
-    return value.upper()
-
-
-# return a string in title case
-def totitle(value):
-    return value.title()
-
-
-# return a string after removing leading and trailing whitespaces
-def trim(value):
-    return value.strip()
-
-
-# return a string without s2
-def chomp(value, toremove):
-    return value.replace(toremove, '')
-
-
-#return the substring (index2 can be null, index2 can be negative value)
-def substring(value, index1, index2):
-    if index2 is None:
-        return value[int(index1):]
-    else:
-        return value[int(index1):int(index2)]
-
-
-#replace value2 by value3
-def replaceValue(value, value2, value3):
-    return value.replace(value2, value3)
-
-
-#returns the first appearance of the regex in value
-def match(value, regex):
-    return re.match(regex, value)[0]
-
-
-def variantIdentifier(column1, column2,prefix):
-    value = ""
-    if (str(column1) != "nan"):
-        value = re.sub('_.*','',str(column2))+"_"+str(column1).replace("c.","").replace(">", "~")
-        value = prefix+value
-    return value
-
-# returns conditionally a certain string
-def condreplace(value, value1, value2, replvalue1, replvalue2):
-    if (value == 1): 
-        value = replvalue1
-    elif (value == 0): 
-        value = replvalue2
-    return value
-
-def concat2(value1,value2):
-    if bool(value1) and bool(value2):
-        result = str(str(value1)+str(value2))
-    else:
-        result = ""  
-    return(result)
-
 ########################################################
-################## Falcon Functions ####################
+################## EABlock Functions ###################
 ########################################################
 
 headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
@@ -156,7 +91,7 @@ def falcon_UMLS_CUI_function(value):
     r = requests.post(url, data=payload.encode('utf-8'), headers=headers)
     if r.status_code == 200:
         response=r.json()
-        return response['cui']
+        return response['cui'][0]
     else:
         return ""
 

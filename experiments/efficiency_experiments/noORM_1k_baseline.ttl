@@ -14,8 +14,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix eablock: <http://www.EABlock.com/> .
 
-<Drug>
-	rml:logicalSource [ rml:source "/efficiency_exp_data/dataset_1k_noORM_experiments_processed.csv";
+<http://www.EABlock.com/Drug> a rr:TriplesMap;
+	rml:logicalSource [ rml:source "/data/sjozashoori/eablock/data/dataset_1k_noORM_experiments_processed.csv";
 						rml:referenceFormulation ql:CSV 
 						];
 	rr:subjectMap [
@@ -24,30 +24,30 @@
 	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
 		rr:objectMap [
-            rr:parentTriplesMap <DrugName>
+            rr:parentTriplesMap <http://www.EABlock.com/DrugName>
         ]
 	];
 	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
         rr:objectMap [
-            rr:parentTriplesMap <FalconDBpedia>
+            rr:parentTriplesMap <http://www.EABlock.com/FalconDBpedia>
         ]
 	];
 	rr:predicateObjectMap [
 		rr:predicate owl:sameAs;
         rr:objectMap [
-            rr:parentTriplesMap <FalconWikipedia>
+            rr:parentTriplesMap <http://www.EABlock.com/FalconWikipedia>
         ]
 	];
 	rr:predicateObjectMap [
 		rr:predicate sio:SIO_000255;
         rr:objectMap [
-            rr:parentTriplesMap <FalconUMLS>
+            rr:parentTriplesMap <http://www.EABlock.com/FalconUMLS>
         ]
 	].
 
-<DrugName>
-    rml:logicalSource [ rml:source "/efficiency_exp_data/dataset_1k_noORM_experiments_processed.csv";
+<http://www.EABlock.com/DrugName> a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/data/sjozashoori/eablock/data/dataset_1k_noORM_experiments_processed.csv";
                         rml:referenceFormulation ql:CSV 
                         ];
     rr:subjectMap [
@@ -60,8 +60,8 @@
         ]
     ]. 
 
-<FalconDBpedia>
-    rml:logicalSource [ rml:source "/efficiency_exp_data/dataset_1k_noORM_experiments_processed.csv";
+<http://www.EABlock.com/FalconDBpedia> a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/data/sjozashoori/eablock/data/dataset_1k_noORM_experiments_processed.csv";
                         rml:referenceFormulation ql:CSV
                         ];
     rr:subjectMap [
@@ -76,8 +76,8 @@
         ]
     ]. 
 
-<FalconWikipedia>
-    rml:logicalSource [ rml:source "/efficiency_exp_data/dataset_1k_noORM_experiments_processed.csv";
+<http://www.EABlock.com/FalconWikipedia> a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/data/sjozashoori/eablock/data/dataset_1k_noORM_experiments_processed.csv";
                         rml:referenceFormulation ql:CSV
                         ];
     rr:subjectMap [
@@ -92,8 +92,8 @@
         ]
     ].
 
-<FalconUMLS>
-    rml:logicalSource [ rml:source "/efficiency_exp_data/dataset_1k_noORM_experiments_processed.csv";
+<http://www.EABlock.com/FalconUMLS> a rr:TriplesMap;
+    rml:logicalSource [ rml:source "/data/sjozashoori/eablock/data/dataset_1k_noORM_experiments_processed.csv";
                         rml:referenceFormulation ql:CSV
                         ];
     rr:subjectMap [

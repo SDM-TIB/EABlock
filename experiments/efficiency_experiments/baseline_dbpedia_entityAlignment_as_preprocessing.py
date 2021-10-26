@@ -54,14 +54,14 @@ def falcon_call_db(text,mode):
 
 def handler():
     dbpediaList = []
-    drug_df = pd.read_csv("_PATH_TO_THE_DATASET_e.g._dataset_1k_1ORM_2ORM_experiments.csv", low_memory=False)
+    drug_df = pd.read_csv("/mnt/e/Experiments/BioFunMap/EABlock-data/efficiency_exp_data/dataset_2k_noORM_experiments.csv", low_memory=False)
     for j in range (0,len(drug_df)):
         dbpediaList.append(falcon_call_db(drug_df["DrugName"][j],'short'))
     dbpediaSeries = pd.Series(dbpediaList, name="dbpedia")
     classList = ["https://dbpedia.org/ontology/Disease"]*len(drug_df)
     classSeries = pd.Series(classList, name="dbpediaClass")
     result_df = pd.concat([drug_df,dbpediaSeries,classSeries],axis=1)
-    result_df.to_csv("_PATH_TO_THE_DATASET_e.g.dataset_1k_1ORM_2ORM_experiments_processed.csv")
+    result_df.to_csv("/mnt/e/Experiments/BioFunMap/EABlock-data/efficiency_exp_data/dataset_2k_noORM_experiments_processed.csv")
 
 if __name__ == "__main__":
         handler()
