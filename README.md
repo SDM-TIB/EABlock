@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4965732.svg)]()
 # EABlock
-
+![EABlock](https://github.com/SDM-TIB/EABlock/eablock_logo.png )
 
 
 ## How to apply?
