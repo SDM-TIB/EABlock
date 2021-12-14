@@ -10,7 +10,7 @@
 ### Run with Python3
 ```
 pip install -r requirements.txt
-python3 Functions_Translator/run_translator.py config.ini
+python3 Functions_Interpreter/run_translator.py config.ini
 ```
 
 ## Directly use the docker image:
