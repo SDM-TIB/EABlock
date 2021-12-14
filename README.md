@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4965732.svg)]()
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4965732.svg)](https://doi.org/10.5281/zenodo.5779773)
 
 # ![EABlock](https://github.com/SDM-TIB/EABlock/blob/main/eablock_logo.png "EABlock")
 
