@@ -31,7 +31,7 @@ docker exec -it EABlock python3 /EABlock/run_translator.py /source/config-test.i
 
 
 ```
-cd Functions_FunMap
+cd Functions_Interpreter
 
 docker build -t sdmtib/EABlock:1.0 .
 
