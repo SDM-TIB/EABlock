@@ -4,13 +4,13 @@
 
 
 ## How to apply?
-1. Create your config.ini file following the example provided in [config.ini](https://github.com/SDM-TIB/EABlock/blob/main/Functions_FunMap/config.ini)
+1. Create your config.ini file following the example provided in [config.ini](https://github.com/SDM-TIB/EABlock/blob/main/example/config-test.ini)
 2. Choose one of the options below to run:
 
 ### Run with Python3
 ```
 pip install -r requirements.txt
-python3 Functions_Interpreter/run_translator.py config.ini
+python3 /PATH_TO_EABlock/Functions_Interpreter/run_translator.py /PATH_TO_YOUR_CONFIG_FILE/YOUR_CONFIG_FILE.ini
 ```
 
 ## Directly use the docker image:
