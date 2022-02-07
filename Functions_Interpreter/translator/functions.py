@@ -84,14 +84,15 @@ def falcon_dbpedia_function(value):
         return ""          
 
 def falcon_UMLS_CUI_function(value):
+    value = global_dic["value"]
     output = ""
-    url = 'http://node1.research.tib.eu:9002/umlsmatching?type=cui'
+    url = 'https://labs.tib.eu/sdm/biofalcon/api?mode=short'
     text = str(value).replace("_"," ")
-    payload = '{"data":"'+text+'"}'
+    payload = '{"text":"'+text+'"}'
     r = requests.post(url, data=payload.encode('utf-8'), headers=headers)
     if r.status_code == 200:
         response=r.json()
-        return response['cui']
+        return response['entities'][1][0]
     else:
         return ""
 
@@ -143,7 +144,7 @@ def falcon_UMLS_CUI_description_function(value):
     output = ""
     url = 'http://node3.research.tib.eu:5005/api_umls?mode=long&type=cui'
     text = str(value).replace("_"," ")
-    payload = '{"data":"'+text+'"}'
+    payload = '{"text":"'+text+'"}'
     r = requests.post(url, data=payload.encode('utf-8'), headers=headers)
     if r.status_code == 200:
         response=r.json()
