@@ -1,9 +1,9 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4965732.svg)](https://doi.org/10.5281/zenodo.5779773)
 
 # ![EABlock](https://github.com/SDM-TIB/EABlock/blob/main/eablock_logo.png "EABlock")
+EABlock is an engine-agnostic computational block to solve the problem of entity alignment as part of a declarative knowledge graph creation pipeline. EABlock is composed of a set of functions defined using function ontology and can be called from RML mapping rules and an efficient strategy to evaluate them. The functions in EABlock rely on another engine for solving the tasks of named entity recognition (NER) and entity linking (EL) that are required for entity alignment. For instance Falcon2.0 which performs both NER and EL. The interpreter of the EABLock follows eager evaluation strategy which enables the execution of EABLock functions prior to the execution of the RML mapping rules.
+
 ![pipeline](https://github.com/SDM-TIB/EABlock/blob/main/presentation_interpretation.png "pipeline")
-
-
 
 ## Publication:
 EABlock research paper titled: "EABlock: A Declarative Entity Alignment Block for Knowledge Graph Creation Pipelines" is accepted and will be presented at SAC2022 conference in April2022. 
