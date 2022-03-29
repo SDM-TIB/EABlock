@@ -2,6 +2,11 @@
 
 # ![EABlock](https://github.com/SDM-TIB/EABlock/blob/main/eablock_logo.png "EABlock")
 
+## Publication:
+EABlock research paper titled: "" is accepted and will be presented at SAC2022 conference in April2022. 
+- The pre-print of the paper : https://arxiv.org/pdf/2112.07493.pdf 
+- The slides of the presentation at SAC2022: https://drive.google.com/file/d/1LF_w27Ukr8f6YxWkInD6cBmeK3g4ugda/view?usp=sharing
+- The video of the presentation at SAC2022: https://drive.google.com/file/d/1VihARqa0IuT8w_90FWgFECdPFwS9Ndb7/view?usp=sharing
 
 ## How to apply?
 1. Create your config.ini file following the example provided in [config.ini](https://github.com/SDM-TIB/EABlock/blob/main/example/config-test.ini)
