@@ -1,9 +1,12 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4965732.svg)](https://doi.org/10.5281/zenodo.5779773)
 
 # ![EABlock](https://github.com/SDM-TIB/EABlock/blob/main/eablock_logo.png "EABlock")
+![pipeline](https://github.com/SDM-TIB/EABlock/blob/main/presentation_interpretation.png "pipeline")
+
+
 
 ## Publication:
-EABlock research paper titled: "" is accepted and will be presented at SAC2022 conference in April2022. 
+EABlock research paper titled: "EABlock: A Declarative Entity Alignment Block for Knowledge Graph Creation Pipelines" is accepted and will be presented at SAC2022 conference in April2022. 
 - The pre-print of the paper : https://arxiv.org/pdf/2112.07493.pdf 
 - The slides of the presentation at SAC2022: https://drive.google.com/file/d/1LF_w27Ukr8f6YxWkInD6cBmeK3g4ugda/view?usp=sharing
 - The video of the presentation at SAC2022: https://drive.google.com/file/d/1VihARqa0IuT8w_90FWgFECdPFwS9Ndb7/view?usp=sharing
