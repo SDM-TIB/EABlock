@@ -6,10 +6,10 @@ EABlock is an engine-agnostic computational block to solve the problem of entity
 ![pipeline](https://github.com/SDM-TIB/EABlock/blob/main/presentation_interpretation.png "pipeline")
 
 ## Publication:
-EABlock research paper titled: "EABlock: A Declarative Entity Alignment Block for Knowledge Graph Creation Pipelines" is accepted and will be presented at SAC2022 conference in April2022. 
-- The pre-print of the paper : https://arxiv.org/pdf/2112.07493.pdf 
-- The slides of the presentation at SAC2022: https://drive.google.com/file/d/1LF_w27Ukr8f6YxWkInD6cBmeK3g4ugda/view?usp=sharing
-- The video of the presentation at SAC2022: https://drive.google.com/file/d/1VihARqa0IuT8w_90FWgFECdPFwS9Ndb7/view?usp=sharing
+EABlock research paper titled: "EABlock: A Declarative Entity Alignment Block for Knowledge Graph Creation Pipelines" is accepted and will be presented at SAC 2022, acm sigapp conference. 
+- Paper : https://dl.acm.org/doi/abs/10.1145/3477314.3507132?casa_token=BsK5AdHTJ6kAAAAA:PWO0UWqLVHlIjdX8s0rFLrAWWxaCv3TXjjXXZIahDDEQX6dvpyW3cW9LuPpklh0L-4ksxWHht37C3WQ 
+- The slides of the presentation at SAC 2022: https://drive.google.com/file/d/1LF_w27Ukr8f6YxWkInD6cBmeK3g4ugda/view?usp=sharing
+- The video of the presentation at SAC 2022: https://drive.google.com/file/d/1VihARqa0IuT8w_90FWgFECdPFwS9Ndb7/view?usp=sharing
 
 ## How to apply?
 1. Create your config.ini file following the example provided in [config.ini](https://github.com/SDM-TIB/EABlock/blob/main/example/config-test.ini)
